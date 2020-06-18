@@ -1,7 +1,7 @@
-#[Computing Talent Initiative](https://computingtalentinitiative.org/)
+# [Computing Talent Initiative](https://computingtalentinitiative.org/)
 
-##Online Interview Problem Solving Workshop
-###June through August 2020
+## Online Interview Problem Solving Workshop
+### June through August 2020
 
 
 Spend about 10 hours per week this summer practicing your problem solving skills and preparing for coding interviews for summer 2021 internships. Upon successful completion of the workshop you will be ready to tackle coding challenges from tech companies, which are often the first screening step in the interview process.
