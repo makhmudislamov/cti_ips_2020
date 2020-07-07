@@ -46,6 +46,17 @@ def fizzbuzz(n):
 # Please do not modify the code below this line.
 # When you run your code, you will need to enter 
 # an input in the terminal below, where the prompt appears
+    i = 1
+    while i <= n:
+        if i % 3 == 0 and i % 5 == 0:
+            print("fizzbuzz")
+        elif i % 3 == 0:
+            print("fizz")
+        elif i % 5 == 0 :
+            print("buzz")
+        else:
+            print(i)
+        i += 1
 
 test_case = int(input("Please enter an input number:"))
 fizzbuzz(test_case)
