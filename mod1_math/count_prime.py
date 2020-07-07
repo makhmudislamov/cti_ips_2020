@@ -15,7 +15,7 @@ Determining Primality - isPrime()
 """
 
 print("Input number")
-n = input()
+n = int(input())
 
 # Determine if the input number is prime 
 def isPrime(n):
@@ -27,4 +27,14 @@ def isPrime(n):
 
 # Determine how many prime numbers are UNDER the input number
 def countPrimes(n):
-  pass
+
+  counter = 0
+
+  for i in range(2, n+1):
+    if isPrime(i):
+      counter += 1
+  return counter
+
+print(countPrimes(n))
+
+  
