@@ -41,7 +41,26 @@ Sample Output 2
 
 
 def server_time_check(task_config, task_times):
-    return 0
+
+  completed_tasks = 0
+  # use this version to use with user input
+  # time_left = int(task_config[1:])
+  # this version is to read the test input
+  task_config = task_config.split()
+  time_left = int(task_config[1])
+  # collecting 2nd input as list
+  task_times = task_times.split()
+
+  for time in task_times:
+
+      time = int(time)
+      time_left -= time
+      completed_tasks += 1
+
+      if time_left < 0:
+          completed_tasks -= 1
+
+  print(completed_tasks)
 
 
 ## Please do not change the code below this line
