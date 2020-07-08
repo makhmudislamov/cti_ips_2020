@@ -42,4 +42,25 @@ If you ask any questions, try phrasing them as if statements.
 
 
 def excel_column_to_number(column):
-  return column
+  # PSEUDOCODE
+    # formula = value * (base ** power)
+    # declaring var offset = 64
+    # declaring var power = 0
+    # iterate the string from right to left:
+    # value = ord("str") - offset
+    # use formula to find the col_number
+    # power += 1
+    # return final result
+
+  offset = 64
+  base = 26
+  power = 0
+  column_num = 0
+
+  for i in range(len(column)-1, -1, -1):
+    # accessing char in that index
+    char = column[i]
+    value = ord(char) - offset
+    column_num += value * (base ** power)
+    power += 1
+  return column_num
