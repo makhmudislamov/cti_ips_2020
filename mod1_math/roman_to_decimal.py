@@ -28,5 +28,26 @@ M             1000
 
 We've gone ahead and provided you a helper function- this is an idea you should match from. Breaking the problem down into smaller bits is a great tactic- rather than solving the whole problem, break it down into smaller problems!
 """
+ROMAN_VALUES = {
+    "I": 1,
+    "V": 5,
+    "X": 10,
+    "L": 50,
+    "C": 100,
+    "D": 500,
+    "M": 1000
+}
+
+
 def roman_to_decimal(roman_numeral):
-    pass
+    output = 0
+    for i in range(len(roman_numeral)-1):
+        c = roman_numeral[i]
+        c_next = roman_numeral[i+1]
+        if ROMAN_VALUES[c] < ROMAN_VALUES[c_next]:
+            output -= ROMAN_VALUES[c]
+        else:
+            output += ROMAN_VALUES[c]
+    output = output + ROMAN_VALUES[roman_numeral[-1]]
+
+    return output
