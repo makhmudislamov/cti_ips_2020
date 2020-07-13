@@ -19,5 +19,13 @@ Try to come up as many solutions as you can, there are at least 3 different ways
 Could you do it in-place with O(1) extra space?
 Do not return anything, modify the input array in-place instead.
 """
+
+
 def rotate_array(input_array, k):
-    pass
+  for t in range(1, k + 1):
+    # getting last element
+    end_element = input_array[-1]
+    # inserting the last elemnt to the start of the array
+    input_array.insert(0, end_element)
+    # deleting the lat element
+    input_array.pop()
