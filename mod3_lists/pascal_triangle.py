@@ -15,4 +15,20 @@ Return
 
 
 def pascal_triangle(numRows):
-    pass
+  pascal_triangle = []
+  for i in range(numRows):
+    # appending nested lists
+    pascal_triangle.append([])
+    # appending 1 inside each nested list
+    pascal_triangle[i].append(1)
+    for j in range(1, i):
+      # print(j)
+
+      pascal_triangle[i].append(
+          pascal_triangle[i-1][j-1] + pascal_triangle[i-1][j])
+
+    if(numRows != 0):
+      pascal_triangle[i].append(1)
+
+  pascal_triangle[0].pop()
+  return pascal_triangle
