@@ -26,5 +26,25 @@ Explanation: The first non-whitespace character is '-', which is the minus sign.
 """
 
 
+import re
+
+
 def atoi(a):
-    pass
+  clean = ''
+  min_plus = '-+'
+  # cleaning from whitespace
+  a = re.sub(' ', '', a)
+  if a[0].isalpha():
+      # print(a[0])
+      return 0
+  for char in a:
+      # if char is not anumber
+      if char.isnumeric() or char in min_plus:
+          clean += char
+          # print("clean", clean)
+  if int(clean) >= 2**32:
+      return 2**32
+  elif int(clean) <= -(2**31):
+      return -(2**31)
+  else:
+      return int(clean)
