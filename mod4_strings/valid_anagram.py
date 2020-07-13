@@ -18,5 +18,15 @@ Follow up:
 What if the inputs contain unicode characters? How would you adapt your solution?
 """
 
-def valid_anagram(s,t):
-    pass
+
+def valid_anagram(s, t):
+    if len(s) != len(t):
+        return False
+    for char in s:
+        print(char)
+        if char not in t:
+            return False
+    for char in t:
+        if char not in s:
+            return False
+    return True
