@@ -11,5 +11,24 @@ Output: 2
 """
 
 
-def minimumCharacters():
-    pass
+def minimumCharacters(string):
+    prep_arr = []
+    string = list(string)
+    counter = 0
+    strings_last = len(string) - 1
+
+# while prep array != reversed prep array:
+    while strings_last != 0:
+        # append prep arrap (last item of input string)
+        prep_arr.append(string[strings_last])
+        strings_last -= 1
+        counter += 1
+        prep_arr.extend(string)
+
+        if prep_arr == prep_arr[::-1]:
+            return counter
+        else:
+            prep_arr = prep_arr[:counter]
+            continue
+
+    return counter
