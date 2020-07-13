@@ -28,4 +28,13 @@ Try to get the first one working, then take a look at a few of the approaches.
 
 
 def single_number(integers):
-    pass
+  int_set = set()
+
+  for integer in integers:
+
+    if not integer in int_set:
+        int_set.add(integer)
+    elif integer in int_set:
+        int_set.remove(integer)
+
+  return int_set.pop()
