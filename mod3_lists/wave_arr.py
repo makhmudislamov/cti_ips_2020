@@ -9,5 +9,16 @@ Given [1, 2, 3]
 
 Output return: [2, 1, 3]
 """
+
+
 def wave_array_3(integers):
-    pass
+    # iterate throught the array
+    # shuffle every other elements
+    index = 0
+    while index < len(integers) - 1:
+        # print(integers[index])
+        if integers[index] <= integers[index + 1]:
+            integers[index], integers[index +
+                                      1] = integers[index + 1], integers[index]
+            index += 2
+    return integers
