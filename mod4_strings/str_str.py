@@ -20,4 +20,18 @@ This is consistent to C's strstr() and Java's indexOf().
 
 
 def strStr(haystack, needle):
-    pass
+    if not haystack:
+        return 0
+
+    start = 0
+    end = len(needle)
+    while end < len(haystack) + 1:
+        substring = haystack[start:end]
+        print(substring)
+    if substring != needle:
+        start += 1
+        end += 1
+    else:
+        return start
+
+    return -1
