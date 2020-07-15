@@ -5,3 +5,27 @@ Don't use the built-in sorted or list.sort() methods - the goal of this is to un
 """
 
 
+def merge_sort(nums):
+  sorted_list = []
+  if len(nums) > 1:
+    # bisect the list
+    mid = len(nums) // 2
+
+    left = nums[0:mid]
+    right = nums[mid:]
+    # create two lists, for left and right halves
+    # sort them
+    right = merge_sort(right)
+    left = merge_sort(left)
+
+    while len(left) > 0 and len(right) > 0:
+      if left[0] > right[0]:
+        sorted_list.append(right.pop(0))
+      else:
+        sorted_list.append(left.pop(0))
+    sorted_list.extend(right)
+    sorted_list.extend(left)
+    return sorted_list
+  else:
+    sorted_list = nums
+    return sorted_list
