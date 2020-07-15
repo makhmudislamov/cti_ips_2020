@@ -19,3 +19,26 @@ Example:
 
 Done! Total swaps: 4.
 """
+
+
+def bubble_sort_swaps(nums):
+  count_swaps = 0
+  index = 0
+  last_unsorted_indx = len(nums)
+  not_swapped = True
+
+  while not_swapped:
+    # until the last element of the list:
+      not_swapped = False
+      while index < last_unsorted_indx - 1:
+          if nums[index] > nums[index + 1]:
+              nums[index], nums[index + 1] = nums[index + 1], nums[index]
+              count_swaps += 1
+              index += 1
+              not_swapped = True
+          else:
+              index += 1
+      last_unsorted_indx = last_unsorted_indx - 1
+      index = 0
+
+  return count_swaps
