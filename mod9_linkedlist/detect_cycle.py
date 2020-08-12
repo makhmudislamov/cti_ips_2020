@@ -13,8 +13,6 @@ cause_havoc(ll)
 ## thankfully, if your code works, you can detect this!
 ll.has_cycle() # returns True
 """
-### do not modify this class
-
 
 class LinkedNode:
   def __init__(self, data):
@@ -59,4 +57,12 @@ class LinkedList:
   # implement this method
   # return true if there is a cycle in this linked list
   def has_cycle(self):
-    pass
+    temporary_list = []
+    curr_node = self.head
+    while curr_node != None:
+      if curr_node in temporary_list:
+        return True
+      else:
+        temporary_list.append(curr_node)
+        curr_node = curr_node.next
+    return False
