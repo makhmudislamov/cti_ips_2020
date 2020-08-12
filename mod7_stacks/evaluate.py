@@ -26,4 +26,26 @@ The answer to this expression is 0.
 
 
 def evaluate_expression(expression):
-    pass
+  stack = []
+
+  for char in expression:
+      if char.isnumeric():
+          stack.append(int(char))
+      else:
+          if char == "+":
+              a = stack.pop()
+              b = stack.pop()
+              stack.append(a + b)
+          elif char == "-":
+              a = stack.pop()
+              b = stack.pop()
+              stack.append(a - b)
+          elif char == "/":
+              a = stack.pop()
+              b = stack.pop()
+              stack.append(b // a)
+          else:
+              a = stack.pop()
+              b = stack.pop()
+              stack.append(a * b)
+  return stack.pop()
