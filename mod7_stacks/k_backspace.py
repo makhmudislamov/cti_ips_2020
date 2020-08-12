@@ -30,8 +30,31 @@ Output #3
 
 
 def k_backspace(inputString):
+  # INPUT  >> string
+  # OUTPUT >> string
 
-    # don't forget to actually call your answer's function!
-testInput = 'a<bc<'
+  # PSEUDOCODE
+  # create a stack - to hold our input
+  stack = []
+
+# loop over the input char by char:
+  for char in inputString:
+    if char == '<':
+      stack.pop()
+    else:
+      stack.append(char)
+  final_output = ''.join(stack)
+  return final_output
+# if current char is '<'
+# remove the top char
+# else
+# add the curren char to the stack
+
+# cast the list to a string
+# print the string
+
+
+# don't forget to actually call your answer's function!
+testInput = 'a<a<a<aa<<'
 actualOutput = k_backspace(testInput)
 print(actualOutput)
