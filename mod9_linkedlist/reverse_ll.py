@@ -52,4 +52,11 @@ class LinkedList:
 
   # implement this method
   def reverse(self):
-    pass
+    previous_node = None
+    while self.head:
+      temporary_pointer = self.head
+      self.head = self.head.next
+      temporary_pointer.next = previous_node
+      previous_node = temporary_pointer
+    self.head = previous_node
+    return self
