@@ -13,4 +13,14 @@ Examples:
 "A man, a plan, a canal, Panama." # returns 1
 """
 
+import string
 
+
+def isPalindrome(s):
+    s = s.lower()
+    s = s.translate(s.maketrans('', '', string.punctuation))
+    s = s.replace(" ", "")
+
+    if s == s[::-1]:
+        return True
+    return False
