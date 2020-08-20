@@ -10,3 +10,20 @@ T = [73, 74, 75, 71, 69, 72, 76, 73]
 Output#1
 [1, 1, 4, 2, 1, 1, 0, 0]
 """
+
+
+def dailyTemperatures(dailyTemps):
+    stack = []
+    stack.append(0)
+    ans = [0]*len(dailyTemps)
+    for i in range(1, len(dailyTemps)):
+        top = stack[-1]
+        while dailyTemps[i] > dailyTemps[top]:
+            ans[top] = i-top
+            stack.pop()
+            if len(stack) > 0:
+                top = stack[-1]
+            else:
+                break
+        stack.append(i)
+    return ans
