@@ -27,3 +27,18 @@ Example 4:
 Input: "()))(("
 Output: 4
 """
+
+
+def minAddToMakeValid(S):
+    if len(S) == 0:
+        return 0
+    open_par, closed_par = 0, 0
+    for c in S:
+        if c == '(':
+            open_par += 1
+        if c == ')':
+            if open_par > 0:
+                open_par -= 1
+            else:
+                closed_par += 1
+    return open_par + closed_par
