@@ -8,3 +8,22 @@ Input: "/home/"
 Output: "/home"
 Explanation: Note that there is no trailing slash after the last directory name.
 """
+
+
+def simplifyPath(path):
+    result = []
+    path_list = path.split('/')
+
+    for p in path_list:
+        if p:
+            if p == '..':
+                if result:
+                    result.pop()
+            elif p == '.':
+                continue
+            else:
+                result.append(p)
+
+    res = "/" + "/".join(result)
+
+    return res
