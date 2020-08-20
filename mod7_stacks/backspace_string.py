@@ -11,3 +11,18 @@ Explanation: Both S and T become "ac".
 """
 
 
+def compile(x):
+
+    stack = []
+    for y in x:
+        if y == '#':
+            if stack:
+                stack.pop()
+        else:
+            stack.append(y)
+    return stack
+
+
+def backspaceCompare(String1, String2):
+
+    return compile(String1) == compile(String2)
