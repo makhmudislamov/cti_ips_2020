@@ -14,3 +14,9 @@ For example:
 """
 
 
+def count_set_bits(num):
+    count = 0
+    while num:
+        count = count + num % 2
+        num = num // 2
+    return count
