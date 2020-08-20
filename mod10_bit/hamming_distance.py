@@ -15,3 +15,19 @@ Explanation:
 
 The above arrows point to positions where the corresponding bits are different.
 """
+
+
+def hammingDistance(x, y):
+    res = 0
+    while x or y:
+        if (x & 1) ^ (y & 1) == 1:
+            res += 1
+        x >>= 1
+        y >>= 1
+    return res
+
+
+testX = 4
+testY = 1
+testResult = hammingDistance(testX, testY)
+print(testResult)
