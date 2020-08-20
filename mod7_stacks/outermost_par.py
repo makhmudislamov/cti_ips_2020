@@ -18,7 +18,15 @@ After removing outer parentheses of each part, this is "()()" + "()" = "()()()".
 
 
 def removeOuterParentheses(string):
-	return
+    stack = list()
+    result = str()
+
+    for b in string:
+        if stack and not(len(stack) == 1 and b == ')'):
+            result += b
+        stack.append(b) if b == '(' else stack.pop()
+
+    return result
 
 
 sampleInput = "(()())(())"
